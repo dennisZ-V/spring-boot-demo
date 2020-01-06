@@ -1,4 +1,4 @@
-package com.dennis.springbootdemo;
+package com.dennis.spring.boot.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

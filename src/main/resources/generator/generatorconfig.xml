@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- import jdbc configuration -->
+    <properties resource="jdbc.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- configuration tk.mybatis plugin-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.MyMapper"/>
+        </plugin>
+
+        <!-- configuration datasource -->
+        <jdbcConnection
+            driverClass="${jdbc.driverClass}"
+            connectionURL="${jdbc.connectionURL}"
+            userId="${jdbc.username}"
+            password="${jdbc.password}">
+        </jdbcConnection>
+
+        <!--生成entity类存放位置-->
+        <javaModelGenerator targetPackage="com.dennis.spring.boot.domain"
+                            targetProject="src/main/java"/>
+
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources"/>
+
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dennis.spring.boot.mapper"
+                             targetProject="src/main/java"/>
+
+        <table catalog="mytraining" tableName="%">
+            <property name="igonreQualifiersAtRuntime" value="true"/>
+
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
