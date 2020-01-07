@@ -24,7 +24,7 @@
         </jdbcConnection>
 
         <!--生成entity类存放位置-->
-        <javaModelGenerator targetPackage="com.dennis.spring.boot.domain"
+        <javaModelGenerator targetPackage="com.dennis.spring.boot.demo.domain"
                             targetProject="src/main/java"/>
 
         <!--生成映射文件存放位置-->
@@ -32,13 +32,13 @@
                          targetProject="src/main/resources"/>
 
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dennis.spring.boot.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dennis.spring.boot.demo.mapper"
                              targetProject="src/main/java"/>
 
         <table catalog="mytraining" tableName="%">
-            <property name="igonreQualifiersAtRuntime" value="true"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
 
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
 </generatorConfiguration>

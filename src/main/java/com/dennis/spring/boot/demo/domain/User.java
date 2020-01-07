@@ -1,8 +1,9 @@
-package com.dennis.spring.boot.domain;
+package com.dennis.spring.boot.demo.domain;
+
+import lombok.Data;
 
 import javax.persistence.*;
-
-@Table(name = "mytraining..user")
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
